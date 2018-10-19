@@ -1,0 +1,50 @@
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#occurrence> <http://schema.org/name> "ANICS568-11" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#occurrence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Occurrence> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Location> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Event> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Identification> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#occurrence> <http://purl.org/dsw/atEvent> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#event> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#event> <http://purl.org/dsw/locatedAt> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#occurrence> <http://purl.org/dsw/occurrenceOf> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://purl.org/dsw/identifies> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://purl.org/dsw/isBasisForId> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/iri/toTaxon> <http://boldsystems.org/index.php/Public_BarcodeCluster?clusteruri=BOLD:ABZ2210> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://purl.org/dsw/evidenceFor> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#occurrence> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dsw/Specimen> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/otherCatalogNumbers> "11ANIC-04568" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/catalogNumber> "ANIC Database No. 31 042406" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/fieldNumber> "11ANIC-04568" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/institutionCode> "Australian National Insect Collection" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/reproductiveCondition> "S" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#specimen> <http://rs.tdwg.org/dwc/terms/lifestage> "A" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#event> <http://rs.tdwg.org/dwc/terms/recordedBy> "K.J.Sandery" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://rs.tdwg.org/dwc/terms/country> "Australia" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://rs.tdwg.org/dwc/terms/stateProvince> "Queensland" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://rs.tdwg.org/dwc/terms/locality> "Bucasia Nth" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "-21.037" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "149.158" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/identifiedBy> "ANIC Curators" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/phylum> "Arthropoda" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/class> "Insecta" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/order> "Lepidoptera" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/family> "Geometridae" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/genus> "Pingasa" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://rs.tdwg.org/dwc/terms/scientificName> "Pingasa chlora" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#event> <http://schema.org/name> "Event" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#location> <http://schema.org/name> "Bucasia Nth" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#identification> <http://schema.org/name> "BOLD:ABZ2210" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://schema.org/name> "ANICS568-11.COI-5P" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://purl.org/dsw/derivedFrom> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dsw/Token> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.uniprot.org/core/Nucleotide_Resource> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://schema.org/alternateName> "KF392630" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://schema.org/sameAs> <https://www.ncbi.nlm.nih.gov/nuccore/KF392630> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#ANICS568-11.COI-5P> <http://schema.org/sameAs> <http://purl.uniprot.org/embl/KF392630> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://purl.org/dsw/derivedFrom> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://schema.org/about> <http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#organism> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dsw/Token> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ImageObject> .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://schema.org/name> "Dorsal" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://schema.org/creator> "Jaclyn McCormick" .
+<http://boldsystems.org/index.php/Public_RecordView?processid=ANICS568-11#media/1098120> <http://schema.org/contentUrl> <http://www.boldsystems.org/pics/ANICS/11ANIC_04568+1301474654.JPG> .

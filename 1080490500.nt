@@ -1,0 +1,44 @@
+<https://gbif.org/occurrence/1080490500> <http://schema.org/name> "FJ429866" .
+<https://gbif.org/occurrence/1080490500> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Occurrence> .
+<https://gbif.org/occurrence/1080490500#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Location> .
+<https://gbif.org/occurrence/1080490500#event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Event> .
+<https://gbif.org/occurrence/1080490500#organism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Organism> .
+<https://gbif.org/occurrence/1080490500#identification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rs.tdwg.org/dwc/terms/Identification> .
+<https://gbif.org/occurrence/1080490500> <http://purl.org/dsw/atEvent> <https://gbif.org/occurrence/1080490500#event> .
+<https://gbif.org/occurrence/1080490500#event> <http://purl.org/dsw/locatedAt> <https://gbif.org/occurrence/1080490500#location> .
+<https://gbif.org/occurrence/1080490500> <http://purl.org/dsw/occurrenceOf> <https://gbif.org/occurrence/1080490500#organism> .
+<https://gbif.org/occurrence/1080490500#identification> <http://purl.org/dsw/identifies> <https://gbif.org/occurrence/1080490500#organism> .
+<https://gbif.org/occurrence/1080490500#specimen> <http://purl.org/dsw/isBasisForId> <https://gbif.org/occurrence/1080490500#identification> .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/iri/toTaxon> <https://gbif.org/species/1957059> .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/scientificName> "Hypobapta percomptaria Guenée, 1857" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/kingdom> "Animalia" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/phylum> "Arthropoda" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/order> "Lepidoptera" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/family> "Geometridae" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/genus> "Hypobapta" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/species> "Hypobapta percomptaria" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "147.32" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "-42.99" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/stateProvince> "Tasmania" .
+<https://gbif.org/occurrence/1080490500#event> <http://rs.tdwg.org/dwc/terms/year> "2007" .
+<https://gbif.org/occurrence/1080490500#event> <http://rs.tdwg.org/dwc/terms/month> "12" .
+<https://gbif.org/occurrence/1080490500#event> <http://rs.tdwg.org/dwc/terms/day> "16" .
+<https://gbif.org/occurrence/1080490500#event> <http://rs.tdwg.org/dwc/terms/eventDate> "2007-12-16T00:00:00.000+0000" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/geodeticDatum> "WGS84" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/class> "Insecta" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/countryCode> "AU" .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/country> "Australia" .
+<https://gbif.org/occurrence/1080490500#specimen> <http://rs.tdwg.org/dwc/terms/catalogNumber> "FJ429866" .
+<https://gbif.org/occurrence/1080490500#specimen> <http://rs.tdwg.org/dwc/terms/recordedBy> "Bob Ward" .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/terms/taxonConceptID> <urn:lsid:biodiversity.org.au:afd.taxon:99192177-5832-4281-95d0-46af2e98b417> .
+<https://gbif.org/occurrence/1080490500#identification> <http://rs.tdwg.org/dwc/iri/toTaxon> <https://bie.ala.org.au/species/urn:lsid:biodiversity.org.au:afd.taxon:99192177-5832-4281-95d0-46af2e98b417> .
+<https://gbif.org/occurrence/1080490500#location> <http://rs.tdwg.org/dwc/terms/locality> "Tasmania" .
+<https://gbif.org/occurrence/1080490500#event> <http://schema.org/name> "Event" .
+<https://gbif.org/occurrence/1080490500#location> <http://schema.org/name> "Tasmania" .
+<https://gbif.org/occurrence/1080490500#identification> <http://schema.org/name> "Hypobapta percomptaria Guenée, 1857" .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://schema.org/name> "FJ429866" .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://purl.org/dsw/derivedFrom> <https://gbif.org/occurrence/1080490500#organism> .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dsw/Token> .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.uniprot.org/core/Nucleotide_Resource> .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://schema.org/sameAs> <https://www.ncbi.nlm.nih.gov/nuccore/FJ429866> .
+<https://gbif.org/occurrence/1080490500#FJ429866> <http://schema.org/sameAs> <http://purl.uniprot.org/embl/FJ429866> .

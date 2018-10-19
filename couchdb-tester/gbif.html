@@ -1,0 +1,1420 @@
+<html>
+	<head>
+		<title>GBIF</title>
+		<meta charset="UTF-8"/>
+		<script src="jquery.js"></script>
+		<script src="jsonld.js"></script>
+		<script src="viz.js"></script>
+		<!-- stuff below needs to go into CouchDB views -->
+		<script src="shared.js"></script>
+		<script src="language.js"></script>
+		<style>
+		td { border: 1px solid red; }
+		</style>
+	</head>
+<body>
+
+<h1>GBIF occurrence to JSON-LD</h1>
+
+<div>
+	<div style="width:100%;height:auto;">
+		<h2>JSON</h2>
+			<!-- JSON for data object goes below -->
+			<textarea id="json" style="width:100%;background-color:#224FBC;color:#FFFF66;" rows="20">{
+  "_id": "https://gbif.org/occurrence/1080490500",
+  "_rev": "1-3c3b96e2bd7f323d02422615fef43587",
+  "message-format": "application/json",
+  "message-source": "https://api.gbif.org/v1/occurrence/1080490500",
+  "message": {
+    "key": 1080490500,
+    "datasetKey": "c1fc2df7-223b-4472-8998-70afb3b749ab",
+    "publishingOrgKey": "9ae14314-8a89-499b-97b9-f5e4585f69ce",
+    "networkKeys": [],
+    "installationKey": "19893c10-381e-4534-9bb8-6c37d03ad29e",
+    "publishingCountry": "AU",
+    "protocol": "DWC_ARCHIVE",
+    "lastCrawled": "2018-10-18T13:05:46.979+0000",
+    "lastParsed": "2018-10-12T07:29:00.525+0000",
+    "crawlId": 97,
+    "extensions": {},
+    "basisOfRecord": "UNKNOWN",
+    "taxonKey": 1957059,
+    "kingdomKey": 1,
+    "phylumKey": 54,
+    "classKey": 216,
+    "orderKey": 797,
+    "familyKey": 6950,
+    "genusKey": 1957057,
+    "speciesKey": 1957059,
+    "acceptedTaxonKey": 1957059,
+    "scientificName": "Hypobapta percomptaria Guenée, 1857",
+    "acceptedScientificName": "Hypobapta percomptaria Guenée, 1857",
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "order": "Lepidoptera",
+    "family": "Geometridae",
+    "genus": "Hypobapta",
+    "species": "Hypobapta percomptaria",
+    "genericName": "Hypobapta",
+    "specificEpithet": "percomptaria",
+    "taxonRank": "SPECIES",
+    "taxonomicStatus": "ACCEPTED",
+    "decimalLongitude": 147.32,
+    "decimalLatitude": -42.99,
+    "stateProvince": "Tasmania",
+    "year": 2007,
+    "month": 12,
+    "day": 16,
+    "eventDate": "2007-12-16T00:00:00.000+0000",
+    "issues": [
+      "BASIS_OF_RECORD_INVALID"
+    ],
+    "lastInterpreted": "2018-10-12T07:29:00.622+0000",
+    "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+    "identifiers": [],
+    "facts": [],
+    "relations": [],
+    "geodeticDatum": "WGS84",
+    "class": "Insecta",
+    "countryCode": "AU",
+    "country": "Australia",
+    "identifier": "691b8474-60cd-4ee5-9db1-daf440deaeb0",
+    "catalogNumber": "FJ429866",
+    "occurrenceStatus": "present",
+    "recordedBy": "Bob Ward",
+    "taxonConceptID": "urn:lsid:biodiversity.org.au:afd.taxon:99192177-5832-4281-95d0-46af2e98b417",
+    "locality": "Tasmania",
+    "gbifID": "1080490500",
+    "occurrenceID": "691b8474-60cd-4ee5-9db1-daf440deaeb0"
+  }
+}</textarea>
+
+<!--
+{
+  "_id":"https://gbif.org/occurrence/779870394",
+  "key": 779870394,
+  "datasetKey": "6eb0c925-06b4-4dec-a153-c4a28cb4eb9d",
+  "publishingOrgKey": "ff7bd5db-b724-4932-b496-10ea298851f9",
+  "networkKeys": [],
+  "installationKey": "7c519b4c-1100-4f39-a95a-9b679b4542e4",
+  "publishingCountry": "CA",
+  "protocol": "DWC_ARCHIVE",
+  "lastCrawled": "2017-10-08T11:03:57.026+0000",
+  "lastParsed": "2017-10-08T11:03:57.038+0000",
+  "crawlId": 51,
+  "extensions": {},
+  "basisOfRecord": "PRESERVED_SPECIMEN",
+  "sex": "FEMALE",
+  "taxonKey": 8985346,
+  "kingdomKey": 1,
+  "phylumKey": 54,
+  "classKey": 216,
+  "orderKey": 1457,
+  "familyKey": 7911,
+  "genusKey": 1335011,
+  "speciesKey": 8985346,
+  "scientificName": "Megachile chomskyi Sheffield, 2013",
+  "kingdom": "Animalia",
+  "phylum": "Arthropoda",
+  "order": "Hymenoptera",
+  "family": "Megachilidae",
+  "genus": "Megachile",
+  "species": "Megachile chomskyi",
+  "genericName": "Megachile",
+  "specificEpithet": "chomskyi",
+  "taxonRank": "SPECIES",
+  "dateIdentified": "2012-01-01T00:00:00.000+0000",
+  "decimalLongitude": -102.819,
+  "decimalLatitude": 31.64,
+  "continent": "NORTH_AMERICA",
+  "stateProvince": "Texas",
+  "typeStatus": "PARATYPE",
+  "issues": [
+    "IDENTIFIED_DATE_UNLIKELY"
+  ],
+  "lastInterpreted": "2018-07-07T08:32:31.780+0000",
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+  "identifiers": [],
+  "facts": [],
+  "relations": [],
+  "geodeticDatum": "WGS84",
+  "class": "Insecta",
+  "countryCode": "US",
+  "country": "United States",
+  "rightsHolder": "Royal Saskatchewan Museum",
+  "http://unknown.org/http_//rs.gbif.org/terms/1.0/Identifier": "[ {\n  \"http://purl.org/dc/terms/identifier\" : \"CCDB-03768 A04\",\n  \"http://purl.org/dc/terms/title\" : \"DNA Barcode sample ID\"\n} ]",
+  "scientificNameID": "urn:lsid:zoobank.org:act:3A56D34A-E6FE-453E-BC9E-29A19613F75D",
+  "associatedTaxa": "host:Calylophus hartweggii",
+  "namePublishedInYear": "2013",
+  "associatedReferences": "doi:10.3897/zookeys.283.4674",
+  "county": "Ward",
+  "http://unknown.org/http_//rs.tdwg.org/dwc/terms/Identification": "[ {\n  \"http://rs.tdwg.org/dwc/terms/identifiedBy\" : \"J.L. Neff\",\n  \"http://rs.tdwg.org/dwc/terms/scientificName\" : \"\\\"Megachile amica Cresson, 1872\\\"\",\n  \"http://rs.tdwg.org/dwc/terms/genus\" : \"Megachile\",\n  \"http://rs.tdwg.org/dwc/terms/dateIdentified\" : \"2005\",\n  \"http://rs.tdwg.org/dwc/terms/identificationID\" : \"15\",\n  \"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship\" : \"\\\"Cresson, 1872\\\"\",\n  \"http://rs.tdwg.org/dwc/terms/specificEpithet\" : \"amica\"\n}, {\n  \"http://rs.tdwg.org/dwc/terms/identifiedBy\" : \"\\\"Sheffield, C.\\\"\",\n  \"http://rs.tdwg.org/dwc/terms/typeStatus\" : \"paratype\",\n  \"http://rs.tdwg.org/dwc/terms/scientificName\" : \"\\\"Megachile chomskyi Sheffield, 2013\\\"\",\n  \"http://rs.tdwg.org/dwc/terms/genus\" : \"Megachile\",\n  \"http://rs.tdwg.org/dwc/terms/dateIdentified\" : \"2012\",\n  \"http://rs.tdwg.org/dwc/terms/identificationID\" : \"34\",\n  \"http://rs.tdwg.org/dwc/terms/scientificNameID\" : \"urn:lsid:zoobank.org:act:3A56D34A-E6FE-453E-BC9E-29A19613F75D\",\n  \"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship\" : \"\\\"Sheffield, 2013\\\"\",\n  \"http://rs.tdwg.org/dwc/terms/specificEpithet\" : \"chomskyi\"\n} ]",
+  "gbifID": "779870394",
+  "language": "en",
+  "type": "Physical Object",
+  "preparations": "pinned",
+  "catalogNumber": "RSKM_ENT_E-0100591",
+  "institutionCode": "Royal Saskatchewan Museum",
+  "namePublishedIn": "\"Sheffield, C. (2013). A new species of Megachile Latreille subgenus Megachiloides (Hymenoptera, Megachilidae). ZooKeys, 283(0), 43-58. Pensoft Publishers. doi: 10.3897/zookeys.283.4674.\"",
+  "namePublishedInID": "doi:10.3897/zookeys.283.4674",
+  "identifiedBy": "\"Sheffield, C.\"",
+  "identifier": "15",
+  "nomenclaturalCode": "ICZN",
+  "verbatimEventDate": "5/21/2010",
+  "locality": "\"Ward Co., Monahans Sandhills State Park\"",
+  "datasetName": "Distribution Data for Megachile chomskyi",
+  "collectionCode": "RSKM",
+  "occurrenceID": "15",
+  "recordedBy": "J.L. Neff",
+  "otherCatalogNumbers": "31173",
+  "ownerInstitutionCode": "Royal Saskatchewan Museum",
+  "datasetID": "doi:10.5886/txsd3at3",
+  "collectionID": "urn:lsid:biocol.org:col:35289"
+}
+
+
+-->
+
+<!--
+{
+"_id":"https://gbif.org/occurrence/1066474657",
+  "key": 1066474657,
+  "datasetKey": "a79c2b50-6c8a-11de-8226-b8a03c50a862",
+  "publishingOrgKey": "f9d3db7d-6ee9-4fbf-bd4c-e5d0f0bd26c6",
+  "networkKeys": [],
+  "installationKey": "19893c10-381e-4534-9bb8-6c37d03ad29e",
+  "publishingCountry": "AU",
+  "protocol": "DWC_ARCHIVE",
+  "lastCrawled": "2018-09-02T16:00:32.720+0000",
+  "lastParsed": "2017-09-20T12:37:41.106+0000",
+  "crawlId": 84,
+  "extensions": {},
+  "basisOfRecord": "PRESERVED_SPECIMEN",
+  "sex": "MALE",
+  "taxonKey": 1668042,
+  "kingdomKey": 1,
+  "phylumKey": 54,
+  "classKey": 216,
+  "orderKey": 811,
+  "familyKey": 7285,
+  "genusKey": 1668033,
+  "speciesKey": 1668042,
+  "scientificName": "Balaana gigantea Lambkin & Yeates, 2003",
+  "kingdom": "Animalia",
+  "phylum": "Arthropoda",
+  "order": "Diptera",
+  "family": "Bombyliidae",
+  "genus": "Balaana",
+  "species": "Balaana gigantea",
+  "genericName": "Balaana",
+  "specificEpithet": "gigantea",
+  "taxonRank": "SPECIES",
+  "decimalLongitude": 149.971667,
+  "decimalLatitude": -25.193333,
+  "stateProvince": "Queensland",
+  "year": 1990,
+  "month": 12,
+  "day": 30,
+  "eventDate": "1990-12-30T00:00:00.000+0000",
+  "typeStatus": "HOLOTYPE",
+  "issues": [
+    "GEODETIC_DATUM_ASSUMED_WGS84"
+  ],
+  "modified": "2017-08-28T00:00:00.000+0000",
+  "lastInterpreted": "2018-07-07T07:44:30.128+0000",
+  "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+  "identifiers": [],
+  "facts": [],
+  "relations": [],
+  "geodeticDatum": "WGS84",
+  "class": "Insecta",
+  "countryCode": "AU",
+  "country": "Australia",
+  "http://unknown.org/classs": "Insecta",
+  "preparations": "Pin",
+  "identifier": "2b44a8f3-d840-4340-a455-ee1543875b3b",
+  "catalogNumber": "T99033",
+  "institutionCode": "QM",
+  "locality": "Isla Gorge NP",
+  "gbifID": "1066474657",
+  "collectionCode": "Entomology",
+  "occurrenceID": "2b44a8f3-d840-4340-a455-ee1543875b3b"
+}
+-->
+
+
+<!-- 
+
+{
+	"_id" : "https://gbif.org/occurrence/1317230794",
+  "key": 1317230794,
+  "datasetKey": "821cc27a-e3bb-4bc5-ac34-89ada245069d",
+  "publishingOrgKey": "bc092ff0-02e4-11dc-991f-b8a03c50a862",
+  "networkKeys": [],
+  "installationKey": "b2ff19b5-d74f-40d2-82f1-ec5db01e8e31",
+  "publishingCountry": "US",
+  "protocol": "DWC_ARCHIVE",
+  "lastCrawled": "2018-07-02T13:15:51.747+0000",
+  "lastParsed": "2018-04-02T15:39:59.402+0000",
+  "crawlId": 58,
+  "extensions": {},
+  "basisOfRecord": "PRESERVED_SPECIMEN",
+  "individualCount": 1,
+  "sex": "FEMALE",
+  "lifeStage": "ADULT",
+  "taxonKey": 5044812,
+  "kingdomKey": 1,
+  "phylumKey": 54,
+  "classKey": 216,
+  "orderKey": 1457,
+  "familyKey": 5507,
+  "genusKey": 1369475,
+  "speciesKey": 1369476,
+  "scientificName": "Systole koebelei Ashmead, 1900",
+  "kingdom": "Animalia",
+  "phylum": "Arthropoda",
+  "order": "Hymenoptera",
+  "family": "Eurytomidae",
+  "genus": "Dougiola",
+  "species": "Dougiola koebelei",
+  "genericName": "Systole",
+  "specificEpithet": "koebelei",
+  "taxonRank": "SPECIES",
+  "stateProvince": "[Not Stated]",
+  "typeStatus": "LECTOTYPE",
+  "issues": [],
+  "lastInterpreted": "2018-07-07T16:18:29.982+0000",
+  "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+  "identifiers": [],
+  "media": [
+    {
+      "type": "StillImage",
+      "format": "image/jpeg",
+      "identifier": "http://collections.nmnh.si.edu/media/index.php?irn=10510521",
+      "title": "USNMENT00809090 Systole koebelei Ashmead dorsal habitus",
+      "description": "Type Specimen, dorsal view",
+      "source": "Specimen from Department of Entomology, NMNH, Smithsonian Institution",
+      "creator": "Rachel Osborn"
+    },
+    {
+      "type": "StillImage",
+      "format": "image/jpeg",
+      "identifier": "http://collections.nmnh.si.edu/media/index.php?irn=10510523",
+      "title": "USNMENT00809090 Systole koebelei Ashmead face",
+      "description": "Type specimen, head, frontal view",
+      "source": "Specimen from Department of Entomology, NMNH, Smithsonian Institution",
+      "creator": "Rachel Osborn"
+    },
+    {
+      "type": "StillImage",
+      "format": "image/jpeg",
+      "identifier": "http://collections.nmnh.si.edu/media/index.php?irn=10510525",
+      "title": "USNMENT00809090 Systole koebelei Ashmead labels",
+      "description": "Type Specimen, labels",
+      "source": "Specimen from Department of Entomology, NMNH, Smithsonian Institution",
+      "creator": "Rachel Osborn"
+    },
+    {
+      "type": "StillImage",
+      "format": "image/jpeg",
+      "identifier": "http://collections.nmnh.si.edu/media/index.php?irn=10510527",
+      "title": "USNMENT00809090 Systole koebelei Ashmead labels underside",
+      "description": "Type Specimen, labels",
+      "source": "Specimen from Department of Entomology, NMNH, Smithsonian Institution",
+      "creator": "Rachel Osborn"
+    },
+    {
+      "type": "StillImage",
+      "format": "image/jpeg",
+      "identifier": "http://collections.nmnh.si.edu/media/index.php?irn=10510530",
+      "title": "USNMENT00809090 Systole koebelei Ashmead lateral habitus",
+      "description": "Type Specimen, lateral view",
+      "source": "Specimen from Department of Entomology, NMNH, Smithsonian Institution",
+      "creator": "Rachel Osborn"
+    }
+  ],
+  "facts": [],
+  "relations": [],
+  "class": "Insecta",
+  "countryCode": "AU",
+  "country": "Australia",
+  "identifier": "http://n2t.net/ark:/65665/30140bfa1-5474-4cb4-aaf1-b0fe3869b46f",
+  "higherGeography": "Australia, [Not Stated], [Not Stated]",
+  "institutionID": "http://biocol.org/urn:lsid:biocol.org:col:34871",
+  "verbatimEventDate": "[Not Stated]",
+  "locality": "[Not Stated]",
+  "datasetName": "NMNH Extant Biology",
+  "county": "[Not Stated]",
+  "gbifID": "1317230794",
+  "collectionCode": "Entomology",
+  "occurrenceID": "http://n2t.net/ark:/65665/30140bfa1-5474-4cb4-aaf1-b0fe3869b46f",
+  "type": "PhysicalObject",
+  "preparations": "Pinned",
+  "catalogNumber": "USNMENT809090",
+  "recordedBy": "A. Koebele",
+  "http://unknown.org/http_//rs.tdwg.org/dwc/terms/ResourceRelationship": "[ ]",
+  "institutionCode": "USNM",
+  "higherClassification": "Animalia, Arthropoda, Insecta, Hymenoptera, Eurytomidae"
+}
+-->
+			<br />
+			<button onclick="convert()">Convert JSON to RDF</button>
+	</div>
+	<div style="clear:both;"></div>
+	
+	<div style="width:100%;">
+		<h2>Triples</h2>
+		<div id="output" style="width:100%;background-color:#FF7;color:#222;overflow:auto;"></div>
+		<h2>Graph</h2>
+		<div id="graph" style="width:100%;overflow:auto;"></div>
+		<h2>JSON-LD</h2>
+		<div id="jsonld" style="width:100%;white-space:pre;background-color:#333;color:white;overflow:auto;"></div>
+
+</div>			
+			
+		
+		
+		
+<script>
+
+	
+//----------------------------------------------------------------------------------------
+// START COUCHDB VIEW
+
+//----------------------------------------------------------------------------------------
+// Return true if value is not empty, tests for strange stuff such as "[Not Stated]"
+function not_empty(value) {
+	var empty = true;
+	
+	if (!value) {
+		return false;
+	}
+
+	if (value == null) {
+		return false;
+	}
+
+	if (value.match(/\[Not Stated\]/i)) {
+		return false;
+	}
+	
+	return empty;
+
+
+}
+
+//----------------------------------------------------------------------------------------
+// Get a list of specimen codes and other potential specimen identifiers
+function specimen_codes(doc) {
+  var codes = [];
+
+  // By default we simply output institutionCode and catalogNumber,
+  // but for some we need special processing. Setting output_default to false
+  // means that the simple institutionCode + catalogNumber
+  // doesn't apply.
+  var output_default = true;
+
+  // Here we do any special processing do create codes seen in the wild
+  switch (doc.message.datasetKey) {
+
+    // AMNH
+    // Birds
+    case '96c93a1e-f762-11e1-a439-00145eb45e9a':
+      var catalogNumber = doc.message.catalogNumber;
+      catalogNumber = catalogNumber.replace(/DOT-/i, '');
+      catalogNumber = catalogNumber.replace(/SKIN-/i, '');
+      codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      break;
+
+      // AM
+    case 'dce8feb0-6c89-11de-8225-b8a03c50a862':
+      var catalogNumber = doc.message.catalogNumber;
+      catalogNumber = catalogNumber.replace(/\\./, '');
+      codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      if (catalogNumber.match(/^R/)) {
+        codes.push(doc.message.institutionCode + catalogNumber);
+      }
+      codes.push('Australian Museum ' + catalogNumber);
+      output_default = false;
+      break;
+
+      // ANWC
+    case '0debafd0-6c8a-11de-8225-b8a03c50a862':
+      if (doc.message.catalogNumber.match(/^[A-Z]/)) {
+        codes.push(doc.message.institutionCode + ':' + doc.message.catalogNumber.replace(/^[A-Z][0]*/, ''));
+      }
+      break;
+
+      // CASIZ
+    case '44bcde48-ac71-46f2-bf73-24fc3c008b6c':
+      var catalogNumber = doc.message.catalogNumber.replace(/\\.0/, '');
+      codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      // CAS:CASIZ 175448 
+      codes.push(doc.message.institutionCode + ':CASIZ ' + catalogNumber);
+      output_default = false;
+      break;
+
+      // CAS herps
+    case 'cece4fc2-1fec-4bb5-a335-7252548e3f0b':
+      codes.push(doc.message.institutionCode + doc.message.catalogNumber);
+      codes.push(doc.message.institutionCode + ':Herp:' + doc.message.catalogNumber);
+      break;
+      // CAS Ichs
+        
+    case '5d6c10bd-ea31-4363-8b79-58c96d859f5b':
+          codes.push(doc.message.institutionCode + doc.message.catalogNumber);    
+      codes.push(doc.message.institutionCode + ':Ich:' + doc.message.catalogNumber);    
+      break;
+
+      // CSIRO
+      // CSIRO Ichthyology provider for OZCAM
+    case '18c93d12-34fb-4d3f-903c-b77215a1dcc9':
+      if (doc.message.catalogNumber.match(/^H/)) {
+        // BOLD cites them like this
+        codes.push(doc.message.institutionCode + ' H ' + doc.message.catalogNumber.replace(/^H/, ''));
+      }
+      break;
+
+      // FMNH
+    case 'e48d6c49-34a3-4df6-8206-121c061f190d':
+        codes.push(doc.message.institutionCode + ':HERP:' + doc.message.catalogNumber);
+      break;
+
+      // Kew
+    case 'cd6e21c8-9e8a-493a-8a76-fbf7862069e5':
+        codes.push(doc.message.catalogNumber);
+      output_default = false;
+      break;
+
+      // MHNG
+    case '5a659248-1f70-11e3-b2c5-00145eb45e9a':
+      if (doc.message.catalogNumber.match(/^MHNG-MAM-/)) {
+        var catalogNumber = doc.message.catalogNumber;
+        catalogNumber = catalogNumber.replace(/MHNG-MAM-/, '');  
+        codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+
+        // for BOLD
+        catalogNumber = catalogNumber.replace(/\\./, '');  
+        codes.push(doc.message.institutionCode + '-' + catalogNumber);
+        output_default = false;
+      }
+      break;
+
+      // MNHN
+    case '1b2af425-9f6f-4b28-a008-af9757317c4c':
+      if (doc.message.catalogNumber.match(/^ENSIF/)) {
+        var catalogNumber = doc.message.catalogNumber;
+        catalogNumber = catalogNumber.replace(/ENSIF/, '');  
+        codes.push(doc.message.institutionCode + ':ENSIF ' + catalogNumber);
+      }
+      break;
+      // MHNH birds
+    case 'ba0c03ab-fa61-4a3c-8db7-35c8c3454168':
+      if (doc.message.catalogNumber.match(/^MO/)) {
+        var catalogNumber = doc.message.catalogNumber;
+        catalogNumber = catalogNumber.replace(/MO-/, '');  
+        codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      }
+      break;
+
+      // MCZ
+    case '4bfac3ea-8763-4f4b-a71a-76a6f5f243d3':
+      if (doc.message.catalogNumber.match(/^[R]-/)) {
+        codes.push(doc.message.institutionCode + ' ' + doc.message.catalogNumber.replace(/^[R]-/, ''));
+      }
+      break;
+
+      // MVZ
+    case '09c4287e-e6d5-4552-a07f-bff8a00833d8':
+         codes.push(doc.message.institutionCode + ':Herp:' + doc.message.catalogNumber);   
+      break;
+
+      // NMV D
+    case '39905320-6c8a-11de-8226-b8a03c50a862':
+      codes.push(doc.message.institutionCode + doc.message.catalogNumber.replace(/ /, ''));
+      codes.push('NMV<AUS>:' + doc.message.institutionCode + doc.message.catalogNumber.replace(/ /, ''));
+      break;
+
+      // OMNH Osaka Museum of Natural History fish
+    case '849f0a76-f762-11e1-a439-00145eb45e9a':
+      if (doc.message.collectionCode == 'P') {
+        codes.push(doc.message.institutionCode + '-' + doc.message.collectionCode + ' ' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+        output_default = false;
+      }
+      break;
+
+      // OSUC
+      // C.A. Triplehorn Insect Collection, Ohio State University, Columbus, OH (OSUC)
+    case '84ab7b76-f762-11e1-a439-00145eb45e9a':
+      codes.push(doc.message.catalogNumber);
+      output_default = false;
+      break;
+      
+
+      // TTU
+      // mammals
+    case '854f70cc-55e3-4af2-9417-0f47d6c7902d':
+      // output field numbers as tissue numbers
+      if (doc.message.fieldNumber) {
+        codes.push('TK' + doc.message.fieldNumber);
+        codes.push('TK ' + doc.message.fieldNumber);
+      }
+      break;
+
+      // UAM
+      // mammals
+    case '377be098-626f-4cc2-b4b5-35700050669a':
+      codes.push(doc.message.institutionCode + ':Mamm:' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+      break;
+
+      // UF (FLMNH)
+      // Ichthyology
+    case 'eccf4b09-f0c8-462d-a48c-41a7ce36815a':
+      codes.push('FLMNH ' + doc.message.catalogNumber);
+      codes.push('UF' + doc.message.catalogNumber);
+      break;
+      // Inverts (e.g., moolluscs)
+    case '85b1cfb6-f762-11e1-a439-00145eb45e9a':
+      codes.push('UF ' + doc.message.catalogNumber.replace(/\\-\\w+$/, ''));
+      break;
+
+      // USNM
+    case '5df38344-b821-49c2-8174-cf0f29f4df0d':
+      codes.push(doc.message.institutionCode + ' ' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+
+      switch (doc.message.collectionCode) {
+        case 'Amphibians & Reptiles':
+          codes.push(doc.message.institutionCode + ':Herp:' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        case 'Birds':
+          codes.push(doc.message.institutionCode + ':Birds:' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        case 'Fishes':
+          codes.push(doc.message.institutionCode + ':Fish:' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        case 'Mammals':
+          codes.push(doc.message.institutionCode + ':MAMM:' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        default:
+          break;
+      }
+      output_default = true;
+      break;
+
+      // UTA
+      // Herpetology
+    case '8d88898d-a2c4-4616-a1fe-431b9c06b671':
+      switch (doc.message.collectionCode) {
+        case 'UTA-A':
+          codes.push(doc.message.institutionCode + ' A' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          codes.push(doc.message.institutionCode + ' A-' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        case 'UTA-R':
+          codes.push(doc.message.institutionCode + ' R' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          codes.push(doc.message.institutionCode + ' R-' + doc.message.catalogNumber.replace(/\\.\\d+/, ''));
+          break;
+        default:
+          break;
+      }
+      break;
+
+      // UWBM 
+      // birds
+    case '830fd460-f762-11e1-a439-00145eb45e9a':
+      break;
+
+      // UZA
+    case '96c25708-f762-11e1-a439-00145eb45e9a':
+      codes.push(doc.message.catalogNumber);
+      output_default = false;
+      break;
+
+      // WAM
+    case '7c93d290-6c8b-11de-8226-b8a03c50a862':
+      codes.push(doc.message.institutionCode + doc.message.catalogNumber);
+      codes.push(doc.message.institutionCode + ' ' + doc.message.catalogNumber.replace(/^R/, ''));
+
+      if (doc.message.collectionCode == "REPT") {
+        // Number-only codes need R prefix
+        if (doc.message.catalogNumber.match(/^\\d+/)) {
+          codes.push(doc.message.institutionCode + 'R' + doc.message.catalogNumber);
+          codes.push(doc.message.institutionCode + ' R' + doc.message.catalogNumber);
+        }
+      }
+      break;
+
+      // YPM Inverts
+    case '854e35e6-f762-11e1-a439-00145eb45e9a':
+      // YPM entomology
+    case '96404cc2-f762-11e1-a439-00145eb45e9a':
+      // YPM fish
+    case '96419bea-f762-11e1-a439-00145eb45e9a':
+      // YPM Herps
+    case '861d3d64-f762-11e1-a439-00145eb45e9a':
+      // YPM birds
+    case '854cf79e-f762-11e1-a439-00145eb45e9a':
+      // YPM mammals
+    case '854f602e-f762-11e1-a439-00145eb45e9a':
+      var parts = doc.message.catalogNumber.match(/(YPM)\\s+([A-Z]+)\\s+(0+)?(\\d+)/);
+      if (parts) {
+        var collection = parts[2];
+        var catalogNumber = parts[4];
+
+        // YPM \\d+
+        codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+        // YPM as is
+        codes.push(doc.message.catalogNumber);
+        // DwC triple
+        collection = collection.substr(0, Math.min(3, collection.length));
+        codes.push(doc.message.institutionCode + ':' + collection + ':' + catalogNumber);
+      }
+      output_default = false;
+      break;
+      
+      // ZMA
+      // ZMA fish types
+    case '903b7df0-6166-11de-84bf-b8a03c50a862':
+      var catalogNumber  = doc.message.catalogNumber;
+      catalogNumber = catalogNumber.replace(/Pisces_/, '');
+      catalogNumber = catalogNumber.replace(/,/, '.');
+      codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      output_default = true;
+      break;
+
+      // ZMUC
+    case 'cb643105-2e6b-403d-a23b-2c8128d1f97c':
+      codes.push(doc.message.catalogNumber.replace(/-/, ' '));
+      output_default = false;
+      break;
+
+      // ZMUC birds
+    case 'af3bce08-0599-45a6-9bfc-08188bcd868e':
+      var catalogNumber = doc.message.catalogNumber.replace(/AVES-0?/, '');
+      codes.push(doc.message.institutionCode + ' ' + catalogNumber);
+      // see doi:10.1007/s10336-006-0082-4
+      if (catalogNumber.length == 5) {
+        codes.push(doc.message.institutionCode + ' ' + catalogNumber.substr(0, 2) + '.' + catalogNumber.substr(2, 3));
+      }
+      output_default = false;
+      break;
+
+      // Zoologische Staatssammlung Muenchen
+      // International Barcode of Life (iBOL) - Barcode of Life Project Specimen Data
+    case 'f29ab192-5964-40ae-a397-fa48ffdf0661':
+      codes.push(doc.message.catalogNumber);
+      output_default = false;
+      break;
+
+    default:
+      output_default = true; // for now while we debug, make true when all done
+      break;
+  }
+
+
+  // add any other useful records
+  if (doc.message.otherCatalogNumbers) {
+    codes.push(doc.message.otherCatalogNumbers);
+  }
+
+  if (doc.message.recordNumber) {
+    codes.push(doc.message.recordNumber);
+  }
+
+	/*
+  if (doc.message.occurrenceID) {
+    codes.push(doc.message.occurrenceID);
+  }
+	*/
+	
+  if (output_default) {
+    if (doc.message.institutionCode && doc.message.catalogNumber) {
+      codes.push(doc.message.institutionCode + ' ' + doc.message.catalogNumber);
+    }
+
+    // For when we have complete specimen code as catalogue number
+    if (doc.message.catalogNumber) {
+      codes.push(doc.message.catalogNumber);
+    }
+  }
+
+  // Make unique
+  var unique = [];
+  for (var i = 0; i < codes.length; i++) {
+    if (unique.indexOf(codes[i]) == -1) {
+      unique.push(codes[i]);
+    }
+  }
+
+  return unique;
+}
+
+//----------------------------------------------------------------------------------------
+function message(doc) {
+
+    var triples = [];
+    
+    var base_id = doc._id
+   
+       
+    // ids for nodes in graph
+    
+    // event
+    var event_id = base_id + '#event';
+	if (doc.message.eventID) {
+	  if (doc.message.eventID.match(/^(http[s]?|urn)/)) {
+		event_id = doc.message.eventID;
+	  }
+	}
+	
+	// location
+    var location_id = base_id + '#location';
+	if (doc.message.locationID) {
+	  if (doc.message.locationID.match(/^(http[s]?|urn)/)) {
+		location_id = doc.message.locationID;
+	  }
+	}
+
+	// occurrence
+	var occurrence_id = base_id; // + '#occurrence';
+	
+	// organism
+    var organism_id = base_id + '#organism';
+
+	// identification (need to handle multiple ones, but GBIF's ids are buggered by JSON bug)
+    var identification_id = base_id + '#identification';       
+    
+    //-------------------------specimen/occurrence ids---------------------------------------------------
+    // need to think carefully here, is URL to occurrence or to specimen record?   
+    var specimen_id = base_id + '#specimen';
+   
+    /*
+     var occurrenceID = '';
+     var occurrence_identifiers = [];
+
+	  if (doc.message.occurrenceID) {
+
+		// NHM UUID
+		if (occurrenceID == '') {
+		  // NHM
+		  if (doc.message.datasetKey == '7e380070-f762-11e1-a439-00145eb45e9a') {
+			// store UUID
+		   occurrence_identifiers.push(doc.message.occurrenceID);
+		  
+		    // construct URL
+			occurrenceID = 'http://data.nhm.ac.uk/object/' + doc.message.occurrenceID;
+		   }
+		}		
+		      // OZCAM
+		if (occurrenceID == '') {
+		  if (doc.message.datasetKey == 'a79c2b50-6c8a-11de-8226-b8a03c50a862') {
+			// store UUID
+		   occurrence_identifiers.push(doc.message.occurrenceID);
+		  
+		    // construct URL
+			occurrenceID = 'https://biocache.ala.org.au/occurrences/' + doc.message.occurrenceID;
+		   }
+		}
+
+		// URLs
+		if (occurrenceID == '') {			
+			if (doc.message.occurrenceID.match(/^https?/)) {
+			  occurrenceID = doc.message.occurrenceID;
+		  
+			  var m = doc.message.occurrenceID.match(/http:\/\/n2t.net\/ark:\/65665\/(.*)/);
+			  if (m) {
+				occurrence_identifiers.push(m[1]);
+			  }
+			}
+		}
+				
+		// UUID
+		if (occurrenceID == '') {
+		  // UUID
+		  // http://stackoverflow.com/a/13653180/9684
+		  if (doc.message.occurrenceID.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i)) {
+		  
+		    occurrence_identifiers.push(doc.message.occurrenceID.toLowerCase());
+
+			occurrenceID = 'urn:uuid:' + doc.message.occurrenceID.toLowerCase();
+		  }
+		}		
+
+	}
+	*/
+	
+
+	
+    if (doc.message.basisOfRecord) {
+    	switch(doc.message.basisOfRecord) {
+    	
+    		case 'PRESERVED_SPECIMEN':  
+    		
+    			//link to occurrence
+  				triples.push(triple(
+				  specimen_id,
+				  'http://purl.org/dsw/evidenceFor',
+				  occurrence_id));
+     		
+    			// DwC
+				triples.push(triple(
+				  specimen_id,
+				  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+				  'http://purl.org/dsw/Specimen'));
+								
+				
+				// Schema.org
+   		  		
+    			
+    			
+    			// get specimen codes
+    			var codes = specimen_codes(doc);
+    			for (var i in codes) {
+					triples.push(triple(
+					  specimen_id,
+					  'http://schema.org/alternateName',
+					  codes[i]));			
+    			}
+    			
+    			// name for specimen
+    			triples.push(triple(
+					  specimen_id,
+					  'http://schema.org/name',
+					  codes[0]));	    			
+    			
+    			break;
+    			
+    		default:
+    			break;
+    	}
+    }
+    
+    //-------------------------record---------------------------------------------------
+
+	var terms = [];
+	if (doc.message.institutionCode) {
+		terms.push(doc.message.institutionCode);
+	}
+	if (doc.message.collectionCode) {
+		terms.push(doc.message.collectionCode);
+	}
+	if (doc.message.catalogNumber) {
+		terms.push(doc.message.catalogNumber);
+	}
+	
+	// name for occurrence
+	triples.push(triple(
+	  occurrence_id,
+	  'http://schema.org/name',
+	  terms.join(':')));
+	  
+	// sameAs
+	switch (doc.message.datasetKey) {
+	
+		// European Molecular Biology Laboratory Australian Mirror
+		case 'c1fc2df7-223b-4472-8998-70afb3b749ab':
+		
+			triples.push(triple(
+			  occurrence_id,
+			  'http://schema.org/sameAs',
+			  'https://biocache.ala.org.au/occurrences/' + doc.message.identifier));		
+			
+			break;
+			
+		default:
+			break;
+	}
+	  
+	
+
+    //-------------------------properties---------------------------------------------------
+    
+	// Darwin Core types
+	triples.push(triple(
+	  occurrence_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://rs.tdwg.org/dwc/terms/Occurrence'));
+	  
+	triples.push(triple(
+	  location_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://purl.org/dc/terms/Location'));
+	  
+	triples.push(triple(
+	  event_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://rs.tdwg.org/dwc/terms/Event'));
+
+	triples.push(triple(
+	  organism_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://rs.tdwg.org/dwc/terms/Organism'));
+	  
+
+	triples.push(triple(
+	  identification_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://rs.tdwg.org/dwc/terms/Identification'));
+	  
+	  
+	// darwin core/rdf links 
+	
+	triples.push(triple(occurrence_id,
+	  'http://purl.org/dsw/atEvent',
+	  event_id));
+
+	triples.push(triple(event_id,
+	  'http://purl.org/dsw/locatedAt',
+	  location_id));
+
+	triples.push(triple(occurrence_id,
+	  'http://purl.org/dsw/occurrenceOf',
+	  organism_id));
+	  
+	triples.push(triple(identification_id,
+	  'http://purl.org/dsw/identifies',
+	  organism_id));
+
+	if (specimen_id != '') {
+		triples.push(triple(specimen_id,
+		  'http://purl.org/dsw/isBasisForId',
+	  	identification_id));
+	  }
+	  
+	if (doc.message.taxonKey) {
+		triples.push(triple(identification_id,
+			'http://rs.tdwg.org/dwc/iri/toTaxon',
+		  'https://gbif.org/species/' + doc.message.taxonKey));
+		
+	}
+				
+
+	// add schema.org types
+	if (0) {
+   // types
+	  
+	triples.push(triple(event_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://schema.org/Event'));
+	  
+
+	triples.push(triple(location_id,
+	  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+	  'http://schema.org/Place'));
+	
+	// schema links
+	triples.push(triple(event_id,
+	  'http://schema.org/location',
+	  location_id));
+	}
+	
+	
+	// default names for each entity
+	var event_name 			= 'Event';
+	var location_name 		= 'Location';
+	var identification_name = 'Identification';
+	
+	
+    
+    // Darwin Core
+    for (var i in doc.message) {
+      if (doc.message[i]) {
+      
+         switch (i) {
+         
+          // specimen
+          // Darwin Core specimen---------------------------------------------------------
+        case 'catalogNumber':
+        case 'collectionCode':
+        case 'collectionID':
+        case 'institutionCode':
+        case 'institutionID':
+        case 'recordedBy':
+        case 'individualCount':
+        case 'organismQuantity':
+        case 'sex':
+        case 'lifeStage':
+        case 'reproductiveCondition':
+        case 'behavior':
+        //case 'establishmentMeans':
+        //case 'occurrenceStatus':
+        case 'preparations':
+        case 'disposition':
+        case 'otherCatalogNumbers':
+        case 'recordNumber':
+        //case 'occurrenceRemarks':
+
+          triples.push(triple(specimen_id,
+            'http://rs.tdwg.org/dwc/terms/' + i,
+            String(doc.message[i])));
+          break;
+         
+         
+			  // Darwin Core locality-----------------------------------------------------------
+			case 'continent':
+			case 'coordinateUncertaintyInM':
+			case 'coordinatePrecision':
+			case 'country':
+			case 'county':
+			case 'countryCode':
+			case 'decimalLatitude':
+			case 'decimalLongitude':
+			case 'depth':
+			case 'depthAccuracy':
+			case 'elevation':
+			case 'footprintWKT':
+			case 'footprintSRS':
+			case 'footprintSpatialFit':
+			case 'geodeticDatum':
+			case 'georeferencedBy':
+			case 'georeferencedDate':
+			case 'georeferenceSources':
+			case 'georeferenceProtocol':
+			case 'georeferenceVerification':
+			case 'georeferenceRemarks':
+			case 'higherGeography':
+			case 'higherGeographyID':
+			case 'island':
+			case 'islandGroup':
+			case 'locality':
+			case 'locationAccordingTo':
+			case 'locationID':
+			case 'locationRemarks':
+			case 'maximumElevationInMeters':
+			case 'minimumElevationInMeters':
+			case 'maximumDepthInMeters':
+			case 'minimumDepthInMeters':
+			case 'minimumDistanceAboveSurf':
+			case 'maximumDistanceAboveSurf':
+			case 'municipality':
+			case 'pointRadiusSpatialFit':
+			case 'stateProvince':
+			case 'verbatimCoordinates':
+			case 'verbatimLatitude':
+			case 'verbatimLongitude':
+			case 'verbatimCoordinateSystem':
+			case 'verbatimSRS':
+			case 'verbatimDepth':
+			case 'verbatimElevation':
+			case 'verbatimLocality':
+			case 'waterBody': 
+			  if (not_empty(String(doc.message[i]))) {
+			
+				  triples.push(triple(location_id,
+					'http://rs.tdwg.org/dwc/terms/' + i,
+					String(doc.message[i])));
+					
+				  if (i == 'locality') {
+				  	location_name = String(doc.message[i]);
+				  }
+					
+					
+				}
+				break;        
+                  
+ 			  // Darwin Core Event----------------------------------------------------------
+			case 'fieldNumber':
+			case 'eventDate':
+			case 'year':
+			case 'month':
+			case 'day':
+			case 'verbatimEventDate':
+			case 'fieldNotes':
+			case 'eventRemarks':
+			
+			  if (not_empty(String(doc.message[i]))) {
+			
+				  triples.push(triple(event_id,
+					'http://rs.tdwg.org/dwc/terms/' + i,
+					String(doc.message[i])));
+					
+					
+				  if (i == 'fieldNumber') {
+				  	event_name = String(doc.message[i]);
+				  }
+					
+				}
+			  break;
+			  
+ 			  // Darwin Core Identification-----------------------------------------------
+        case "kingdom":
+        case "phylum":
+        case "order":
+        case "class":
+        case "family":
+        case "genus":
+        case "species":
+        case 'scientificName': // convenience
+
+			// identification
+			// https://github.com/tdwg/rdf/blob/master/DwcRdfGuideFinal.md#2.7.4_Description_of_a_taxonomic_entity.md
+        case 'typeStatus':
+        case 'identificationQualifier':
+        case 'typeStatus':
+        case 'identifiedBy':
+        case 'dateIdentified':
+        case 'identificationReferences':
+        case 'identificationVerificationStatus':
+        case 'identificationRemarks':
+
+          triples.push(triple(identification_id,
+            'http://rs.tdwg.org/dwc/terms/' + i,
+            String(doc.message[i])));
+            
+		  if (i == 'scientificName') {
+			identification_name = String(doc.message[i]);
+		  }
+	
+            
+          break;			
+          
+
+		// Some records have identifiers for taxon        
+        case 'taxonConceptID':
+        
+			triples.push(triple(identification_id,
+            	'http://rs.tdwg.org/dwc/terms/' + i,
+            	String(doc.message[i])));        
+        
+        	// Special handling for AFD
+        	if (doc.message[i].match(/urn:lsid:biodiversity.org.au:afd.taxon:/)) {        		
+        		triples.push(triple(identification_id,
+					'http://rs.tdwg.org/dwc/iri/toTaxon',
+		  			'https://bie.ala.org.au/species/' + doc.message.taxonConceptID));
+        	}
+        	
+ 			break;  
+			  
+			default:
+			 break;
+                 
+         }
+      }
+    }
+    
+    
+    // names for entities
+    triples.push(triple(event_id,
+	  'http://schema.org/name',
+	  event_name));
+	
+
+	triples.push(triple(location_id,
+	  'http://schema.org/name',
+	  location_name));
+	
+
+	triples.push(triple(identification_id,
+	  'http://schema.org/name',
+	  identification_name));
+	
+
+    //------------------------------------------------------------------------------------
+	// sequences
+	switch (doc.message.datasetKey) {
+	
+		// European Molecular Biology Laboratory Australian Mirror
+		case 'c1fc2df7-223b-4472-8998-70afb3b749ab':
+			if (doc.message.catalogNumber) {
+
+				  var sequence_name = doc.message.catalogNumber;			
+				  var sequence_id = base_id + '#' + sequence_name;
+			  
+				  triples.push(triple(sequence_id,
+					'http://schema.org/name',
+					sequence_name));
+							
+				  // link to data
+				  triples.push(triple(sequence_id,
+					'http://purl.org/dsw/derivedFrom',
+					organism_id));
+						
+				  // types DwC
+				  triples.push(triple(sequence_id,
+					'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+					'http://purl.org/dsw/Token'));
+
+					// type this as a sequence (how?)
+				  triples.push(triple(sequence_id,
+					'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+					'http://purl.uniprot.org/core/Nucleotide_Resource'));
+																
+				 triples.push(triple(sequence_id,
+					'http://schema.org/sameAs',
+					'https://www.ncbi.nlm.nih.gov/nuccore/' + doc.message.catalogNumber));
+
+				 triples.push(triple(sequence_id,
+					'http://schema.org/sameAs',
+					'http://purl.uniprot.org/embl/' + doc.message.catalogNumber));
+
+			}
+			break;
+			
+			
+		default:
+			break;		
+	}
+	
+	   
+    
+    // Arrays
+
+	// media
+	// facts
+	// relations
+	// issues
+	// identifiers
+	// extensions
+    
+    // Images (model using schema.org)
+    if (doc.message.media) {
+    	for (var i in doc.message.media) {
+    		switch (doc.message.media[i].type) {
+            	case 'StillImage':
+            	
+					// identifier
+					var media_id = occurrence_id + '#media/' + (i + 1);
+					if (doc.message.media[i].identifier) {
+						media_id = doc.message.media[i].identifier;
+					}
+
+				  // link to data
+				  triples.push(triple(media_id,
+					'http://purl.org/dsw/derivedFrom',
+					organism_id));
+							
+				  triples.push(triple(media_id,
+					'http://schema.org/about',
+					organism_id));
+
+				  // types DwC
+				  triples.push(triple(media_id,
+					'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+					'http://purl.org/dsw/Token'));
+
+				// Schema
+				  triples.push(triple(media_id,
+					'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+					'http://schema.org/ImageObject'));
+				
+					for (var k in doc.message.media[i]) {
+					  switch(k) {
+						  case 'format':
+							triples.push(triple(media_id,
+							  'http://schema.org/fileFormat',
+							  doc.message.media[i][k]));
+							break;
+
+						  case 'title':
+							triples.push(triple(media_id,
+							  'http://schema.org/name',
+							  doc.message.media[i][k]));
+							break;
+
+						  case 'description':
+							triples.push(triple(media_id,
+							  'http://schema.org/caption',
+							  doc.message.media[i][k]));
+							break;
+							
+						  case 'references':
+							triples.push(triple(media_id,
+							  'http://schema.org/about',
+							  doc.message.media[i][k]));
+							break;							
+
+						  case 'identifier':
+							triples.push(triple(media_id,
+							  'http://schema.org/contentUrl',
+							  doc.message.media[i][k]));
+							break;
+
+						  case 'creator':
+							triples.push(triple(media_id,
+							  'http://schema.org/creator',
+							  doc.message.media[i][k]));
+							break;
+							
+						default:
+							break;
+						}
+					
+					}
+				
+					break;
+                
+            default:
+            	break;
+    		
+    		
+    		
+    		}
+    	}    
+    }
+    
+    
+    
+    /*
+        // Special handling for schema.org
+    for (var i in doc) {
+      if (doc.message[i]) {
+      
+         switch (i) {
+ 			  // Darwin Core Event----------------------------------------------------------
+			case 'fieldNumber':
+			case 'eventDate':
+			case 'year':
+			case 'month':
+			case 'day':
+			case 'verbatimEventDate':
+			case 'fieldNotes':
+			case 'eventRemarks':
+			
+			  if (not_empty(String(doc.message[i]))) {
+			
+				  triples.push(triple(event_id,
+					'http://rs.tdwg.org/dwc/terms/' + i,
+					String(doc.message[i])));
+				}
+			  break;
+			  
+			  
+			default:
+			 break;
+         
+         
+         }
+      }
+    }
+    */
+  
+    
+                
+    output(doc, triples);
+
+}
+
+function couchdb(doc) {
+   if (doc._id.match(/gbif.org/)) {
+	message(doc);
+   }
+}
+// END COUCHDB VIEW
+
+		
+//----------------------------------------------------------------------------------------
+function convert() {
+	var json = $('#json').val();
+	var doc = JSON.parse(json);
+	
+	console.log(JSON.stringify(doc, null, 2));
+	
+	couchdb(doc);
+}
+
+	
+	</script>		
+			
+
+</div>
+</body>
+</html>			
